@@ -16,9 +16,15 @@ def divide(a, b):
 def power(a, b):
     """Піднесення числа a до степеня b"""
     return a ** b
+def modulo(a, b):
+    """Остача від ділення"""
+    if b != 0:
+        return a % b
+    else:
+        return "Помилка: ділення на нуль!"
 
 print("=== Простий калькулятор ===")
-print("Операції: +, -, *, /, **")
+print("Операції: +, -, *, /, **, %")
 print("Для виходу введіть 'exit'")
 while True:
     operation = input("\nВведіть операцію (+, -, *, /) або 'exit': ")
@@ -27,7 +33,7 @@ while True:
         print("До побачення!")
         break
 
-    if operation not in ['+', '-', '*', '/', '**']:
+    if operation not in ['+', '-', '*', '/', '**', '%']:
 
         print("Невірна операція!")
         continue
@@ -46,6 +52,8 @@ while True:
             result = divide(num1, num2)
         elif operation == '**':
             result = power(num1, num2)
+        elif operation == '%':
+            result = modulo(num1, num2)
 
         print(f"Результат: {result}")
 
